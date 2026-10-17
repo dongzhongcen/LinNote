@@ -1,0 +1,30 @@
+[
+  {
+    "id": "gitignore-c",
+    "name": "C / C++ .gitignore",
+    "summary": "常见 C/C++ 构建产物忽略规则（GitHub gitignore 模板）",
+    "url": "https://raw.githubusercontent.com/github/gitignore/main/C.gitignore",
+    "filename": "C.gitignore"
+  },
+  {
+    "id": "gitignore-python",
+    "name": "Python .gitignore",
+    "summary": "Python 虚拟环境、缓存等忽略规则",
+    "url": "https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore",
+    "filename": "Python.gitignore"
+  },
+  {
+    "id": "editorconfig",
+    "name": "EditorConfig 示例",
+    "summary": "跨编辑器的基础缩进与换行约定",
+    "url": "https://raw.githubusercontent.com/editorconfig/editorconfig-vim/master/.editorconfig",
+    "filename": ".editorconfig.sample"
+  },
+  {
+    "id": "clang-format-sample",
+    "name": ".clang-format 示例（LLVM 风格摘要）",
+    "summary": "仓库内自带的精简 .clang-format 示例；下载实际复制自应用资源或远程",
+    "url": "https://raw.githubusercontent.com/dongzhongcen/LinNote/main/resources/configs/samples/clang-format.sample",
+    "filename": ".clang-format"
+  }
+]

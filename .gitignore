@@ -1,39 +1,10 @@
-# Qt / C++
 build/
 cmake-build-*/
 *.user
-*.user.*
 *.autosave
-*.qmlc
-*.jsc
-moc_*.cpp
-moc_*.h
-qrc_*.cpp
-ui_*.h
-*.o
-*.a
-*.so
-*.so.*
-*.dylib
-*.exe
-*.AppImage
-*.AppDir/
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
-Makefile
-compile_commands.json
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*~
-
-# OS
 .DS_Store
-Thumbs.db
-
-# Local portable data (never commit user notes)
 data/
-*.local.json
+*.o
+moc_*
+ui_*
+qrc_*

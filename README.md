@@ -2,46 +2,57 @@
 
 # LinNote
 
-**便携式 Linux 学习笔记桌面工具**
+**便携笔记本，附带 Linux 指令查询与常用配置下载**
 
-*本地笔记本 · 常用指令速查 · 常用配置下载*
+*Qt 便携桌面工具 · 数据在程序旁 · 删除不留残留*
 
-[English](README.en.md)
+**简体中文** | [English](README.en.md)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Linux-lightgrey.svg)](#)
-[![Qt](https://img.shields.io/badge/Qt-6-green.svg)](#)
+[![许可证](https://img.shields.io/badge/许可证-MIT-blue)](LICENSE)
+[![Qt](https://img.shields.io/badge/Qt-6-green)](https://www.qt.io/)
+[![平台](https://img.shields.io/badge/平台-Linux-orange)](https://github.com/dongzhongcen/LinNote)
 
 </div>
 
 ## 简介
 
-LinNote 是一个 **Qt 便携桌面应用**，以**笔记本**为核心，附带常用 Linux 指令查询与常用配置文件下载。
+LinNote 是一个 **便携（portable）** 的 Qt 小工具。**第一版以笔记本为主**，指令查询和配置下载是附带能力：
 
-- **便携**：程序与数据同目录（或程序旁的 `data/`），拷到 U 盘即可用
-- **无残留**：不写入 `~/.config`、不写系统目录；删除整个程序目录即完全卸载
-- **离线友好**：指令与笔记本地保存；配置下载仅在你主动触发时联网
+1. **笔记本**（主功能）— 本地纯文本笔记，一条笔记一个文件
+2. **指令查询** — 内置常见 Linux 命令速查（可离线）
+3. **配置下载** — 拉取常用配置模板到程序旁目录
 
-## 第一版范围
+用户数据只写在可执行文件旁边的 `data/`，**不写** `~/.config` 等系统目录。删除笔记或已下载配置时，会直接删除对应文件；卸载时删掉整个程序目录即可，无残留。
 
-| 模块 | 说明 |
-|------|------|
-| 笔记本 | 新建 / 编辑 / 搜索笔记（本地存储） |
-| 指令查询 | 内置常用 Linux 命令说明与示例 |
-| 配置下载 | 下载常用配置模板到本地（可选） |
+## 功能
 
-## 状态
+- 默认打开「笔记本」页签；另有指令查询、配置下载
+- 笔记保存在 `data/notes/<id>.txt`；删除即移除该文件
+- 配置下载到 `data/downloads/`；删除会清除本地副本
+- 命令目录来自内置 JSON，可按名称、简介、标签过滤
+- MIT 许可，可用 CMake + Qt6 自行编译
 
-仓库已创建，应用实现进行中。构建与发布方式将随后补齐。
+## 构建
 
-## 开发
-
-计划使用 Qt 6（Widgets 或 Quick）。具体工程结构由开发提交后更新本节。
+依赖：Qt 6（Widgets、Network）、CMake ≥ 3.16、C++17 编译器。
 
 ```bash
 git clone https://github.com/dongzhongcen/LinNote.git
 cd LinNote
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j
+./build/LinNote
 ```
+
+便携使用：把编译出的 `LinNote` 与所需 Qt 库放在同一文件夹；首次运行会自动创建 `data/notes` 与 `data/downloads`。
+
+## 删除与残留
+
+| 操作 | 行为 |
+| --- | --- |
+| 删除笔记 | 删除 `data/notes/<id>.txt` |
+| 删除已下载配置 | 删除 `data/downloads/<文件名>` |
+| 卸载软件 | 删除程序目录（含 `data/`）即可 |
 
 ## 许可证
 

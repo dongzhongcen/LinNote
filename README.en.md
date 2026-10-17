@@ -2,37 +2,39 @@
 
 # LinNote
 
-**A portable Linux study notebook for the desktop**
+**A portable notebook, with Linux command lookup and common config downloads**
 
-*Local notes · Command quick reference · Common config downloads*
+*Qt portable desktop app · data next to the binary · clean deletes*
 
-[简体中文](README.md)
+[简体中文](README.md) | **English**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Linux-lightgrey.svg)](#)
-[![Qt](https://img.shields.io/badge/Qt-6-green.svg)](#)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Qt](https://img.shields.io/badge/Qt-6-green)](https://www.qt.io/)
+[![Platform](https://img.shields.io/badge/platform-Linux-orange)](https://github.com/dongzhongcen/LinNote)
 
 </div>
 
 ## Overview
 
-LinNote is a **portable Qt desktop app** centered on a **notebook**, with Linux command lookup and common config-file downloads as supporting features.
+LinNote is a **portable** Qt utility. **v0.1 focuses on the notebook**; command lookup and config downloads are secondary:
 
-- **Portable**: app and data live together (or under a sibling `data/` folder)
-- **No residue**: does not write to `~/.config` or system paths; deleting the app folder uninstalls everything
-- **Offline-friendly**: notes and commands stay local; config downloads only when you choose
+1. **Notebook** (primary) — plain-text notes, one file per note
+2. **Command lookup** — offline catalog of common Linux commands
+3. **Config downloads** — fetch useful config templates into the app folder
 
-## v1 scope
+All user data lives under `data/` next to the executable (not under `~/.config`). Deleting a note or download removes the file itself. Uninstall by deleting the app folder—no leftovers.
 
-| Module | Description |
-|--------|-------------|
-| Notebook | Create / edit / search notes (local storage) |
-| Commands | Built-in common Linux command notes and examples |
-| Configs | Optional download of common config templates |
+## Build
 
-## Status
+Requires Qt 6 (Widgets, Network), CMake ≥ 3.16, and a C++17 compiler.
 
-Repository created; app implementation in progress. Build and release docs will follow.
+```bash
+git clone https://github.com/dongzhongcen/LinNote.git
+cd LinNote
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j
+./build/LinNote
+```
 
 ## License
 
